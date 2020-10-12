@@ -59,8 +59,8 @@ class MainViewController: UIViewController {
         view.addSubview(gambleButton)
         
         cardImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        cardImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        cardImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120).isActive = true
+        cardImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        cardImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
         cardImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         inputNumberTextField.topAnchor.constraint(equalTo: cardImageView.bottomAnchor,constant: 20 ).isActive = true
@@ -73,7 +73,8 @@ class MainViewController: UIViewController {
         instructionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         gambleButton.topAnchor.constraint(equalTo: instructionLabel.bottomAnchor, constant: 40).isActive = true
-        gambleButton.bottomAnchor.constraint(equalTo: instructionLabel.bottomAnchor, constant: 80).isActive = true
+        gambleButton.bottomAnchor.constraint(equalTo: instructionLabel.bottomAnchor,constant: 80).isActive = true
+        gambleButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
         gambleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         
