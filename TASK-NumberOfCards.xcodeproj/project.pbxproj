@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		603B4AA6253469A900296FB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603B4AA5253469A900296FB7 /* AppDelegate.swift */; };
-		603B4AA8253469A900296FB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603B4AA7253469A900296FB7 /* SceneDelegate.swift */; };
-		603B4AAA253469A900296FB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603B4AA9253469A900296FB7 /* ViewController.swift */; };
-		603B4AAD253469A900296FB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 603B4AAB253469A900296FB7 /* Main.storyboard */; };
+		603B4AAA253469A900296FB7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603B4AA9253469A900296FB7 /* MainViewController.swift */; };
 		603B4AAF253469AB00296FB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 603B4AAE253469AB00296FB7 /* Assets.xcassets */; };
 		603B4AB2253469AB00296FB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 603B4AB0253469AB00296FB7 /* LaunchScreen.storyboard */; };
 		603B4ABD253469AB00296FB7 /* TASK_NumberOfCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603B4ABC253469AB00296FB7 /* TASK_NumberOfCardsTests.swift */; };
 		603B4AC8253469AB00296FB7 /* TASK_NumberOfCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603B4AC7253469AB00296FB7 /* TASK_NumberOfCardsUITests.swift */; };
+		603B4AE2253475AE00296FB7 /* GambleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603B4AE1253475AE00296FB7 /* GambleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +36,7 @@
 /* Begin PBXFileReference section */
 		603B4AA2253469A900296FB7 /* TASK-NumberOfCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TASK-NumberOfCards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		603B4AA5253469A900296FB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		603B4AA7253469A900296FB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		603B4AA9253469A900296FB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		603B4AAC253469A900296FB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		603B4AA9253469A900296FB7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		603B4AAE253469AB00296FB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		603B4AB1253469AB00296FB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		603B4AB3253469AB00296FB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +46,7 @@
 		603B4AC3253469AB00296FB7 /* TASK-NumberOfCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TASK-NumberOfCardsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		603B4AC7253469AB00296FB7 /* TASK_NumberOfCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASK_NumberOfCardsUITests.swift; sourceTree = "<group>"; };
 		603B4AC9253469AB00296FB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		603B4AE1253475AE00296FB7 /* GambleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GambleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				603B4AA5253469A900296FB7 /* AppDelegate.swift */,
-				603B4AA7253469A900296FB7 /* SceneDelegate.swift */,
-				603B4AA9253469A900296FB7 /* ViewController.swift */,
-				603B4AAB253469A900296FB7 /* Main.storyboard */,
+				603B4AA9253469A900296FB7 /* MainViewController.swift */,
+				603B4AE1253475AE00296FB7 /* GambleButton.swift */,
 				603B4AAE253469AB00296FB7 /* Assets.xcassets */,
 				603B4AB0253469AB00296FB7 /* LaunchScreen.storyboard */,
 				603B4AB3253469AB00296FB7 /* Info.plist */,
@@ -233,7 +230,6 @@
 			files = (
 				603B4AB2253469AB00296FB7 /* LaunchScreen.storyboard in Resources */,
 				603B4AAF253469AB00296FB7 /* Assets.xcassets in Resources */,
-				603B4AAD253469A900296FB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				603B4AAA253469A900296FB7 /* ViewController.swift in Sources */,
+				603B4AAA253469A900296FB7 /* MainViewController.swift in Sources */,
+				603B4AE2253475AE00296FB7 /* GambleButton.swift in Sources */,
 				603B4AA6253469A900296FB7 /* AppDelegate.swift in Sources */,
-				603B4AA8253469A900296FB7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +292,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		603B4AAB253469A900296FB7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				603B4AAC253469A900296FB7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		603B4AB0253469AB00296FB7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
