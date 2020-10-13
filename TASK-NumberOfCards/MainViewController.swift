@@ -82,27 +82,27 @@ class MainViewController: UIViewController {
     //MARK: Private Functions
     @objc private func gambleButtonTapped () {
         
+        let alert = UIAlertController(title: "INCORRECT ENTRY",
+                                      message: "The number you are entering must be at least three-digit.",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Try again", style: .cancel, handler: {(action) in self.inputNumberTextField.text = ""}))
+        alert.view.tintColor = UIColor.red
+        
         if let text = inputNumberTextField.text {
             if let number = Int(text) {
-                var threeDigit = number/10
-                threeDigit /= 10
-                threeDigit /= 10
-                if threeDigit > 0, threeDigit != 0{
-                    let resultViewController = ResultViewController()
-                    
+                if number >= 100 {
+                    let resultViewController = ResultViewController(number: number)
                     navigationController?.pushViewController(resultViewController, animated: true)
                 }
                 else {
-                    
-                    let alert = UIAlertController(title: "INCORRECT ENTRY",
-                                                  message: "The number you are entering must be at least three-digit.",
-                                                  preferredStyle: .alert)
-                    let attributedMessagePartToEdit = NSMutableAttributedString(string: "Try again", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
-                    alert.addAction(UIAlertAction(title: attributedMessagePartToEdit.string, style: .cancel, handler: {(action) in self.inputNumberTextField.text = ""}))
-                    
                     self.present(alert, animated: true, completion: nil)
                 }
             }
+        }
+        else{
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
