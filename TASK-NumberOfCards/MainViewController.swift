@@ -33,10 +33,10 @@ class MainViewController: UIViewController {
     }()
     
     let gambleButton: GambleButton = {
-        let button = GambleButton()
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
+        let gambleButton = GambleButton()
+        gambleButton.button.addTarget(self, action: #selector(gambleButtonTapped), for: .touchUpInside)
+        gambleButton.translatesAutoresizingMaskIntoConstraints = false
+        return gambleButton
     }()
     
     
@@ -58,29 +58,52 @@ class MainViewController: UIViewController {
         view.addSubview(instructionLabel)
         view.addSubview(gambleButton)
         
-        cardImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        cardImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
         cardImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        cardImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
+        cardImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 110).isActive = true
         cardImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        inputNumberTextField.topAnchor.constraint(equalTo: cardImageView.bottomAnchor,constant: 20 ).isActive = true
+        inputNumberTextField.topAnchor.constraint(equalTo: cardImageView.bottomAnchor,constant: 30 ).isActive = true
         inputNumberTextField.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        inputNumberTextField.bottomAnchor.constraint(equalTo: cardImageView.bottomAnchor, constant: 60).isActive = true
+        inputNumberTextField.bottomAnchor.constraint(equalTo: cardImageView.bottomAnchor, constant: 70).isActive = true
         inputNumberTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         instructionLabel.topAnchor.constraint(equalTo: inputNumberTextField.bottomAnchor, constant: 20).isActive = true
         instructionLabel.bottomAnchor.constraint(equalTo: inputNumberTextField.bottomAnchor, constant: 40).isActive = true
         instructionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        gambleButton.topAnchor.constraint(equalTo: instructionLabel.bottomAnchor, constant: 40).isActive = true
-        gambleButton.bottomAnchor.constraint(equalTo: instructionLabel.bottomAnchor,constant: 80).isActive = true
+        gambleButton.topAnchor.constraint(equalTo: instructionLabel.bottomAnchor, constant: 50).isActive = true
+        gambleButton.bottomAnchor.constraint(equalTo: instructionLabel.bottomAnchor,constant: 90).isActive = true
         gambleButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
         gambleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        
-        
     }
-
-
+    
+    //MARK: Private Functions
+    @objc private func gambleButtonTapped () {
+        
+        if let text = inputNumberTextField.text {
+            if let number = Int(text) {
+                var threeDigit = number/10
+                threeDigit /= 10
+                threeDigit /= 10
+                if threeDigit > 0, threeDigit != 0{
+                    let resultViewController = ResultViewController()
+                    
+                    navigationController?.pushViewController(resultViewController, animated: true)
+                }
+                else {
+                    
+                    let alert = UIAlertController(title: "INCORRECT ENTRY",
+                                                  message: "The number you are entering must be at least three-digit.",
+                                                  preferredStyle: .alert)
+                    let attributedMessagePartToEdit = NSMutableAttributedString(string: "Try again", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
+                    alert.addAction(UIAlertAction(title: attributedMessagePartToEdit.string, style: .cancel, handler: {(action) in self.inputNumberTextField.text = ""}))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
 }
 
