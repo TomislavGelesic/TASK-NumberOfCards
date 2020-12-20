@@ -8,7 +8,7 @@
 import UIKit
 
 class GambleButton: UIView {
-
+    
     //MARK: Properties
     
     let imageView: UIImageView = {
@@ -19,17 +19,11 @@ class GambleButton: UIView {
     
     let button: UIButton = {
         let button = UIButton()
+        button.titleLabel?.font.withSize(30)
         button.setTitle("GAMBLE", for: .normal)
+        
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
-    }()
-    
-    let stack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 10
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
     }()
     
     //MARK: init
@@ -48,24 +42,21 @@ class GambleButton: UIView {
     
     private func setupViews(){
         self.backgroundColor = .red
-        self.layer.cornerRadius = 20
+        self.layer.cornerRadius = 25
         
         imageView.image = UIImage(named: "Card40")
         
-        self.addSubview(stack)
-        stack.addArrangedSubview(imageView)
-        stack.addArrangedSubview(button)
+        self.addSubview(imageView)
+        self.addSubview(button)
         
-        stack.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        stack.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 30).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-        imageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
-        button.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        
-        
+        button.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        button.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 80).isActive = true
     }
-
 }
